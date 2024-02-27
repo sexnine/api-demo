@@ -14,3 +14,8 @@ export const POST: RequestHandler = async ({request}) => {
     }
     return json({request:req});
 }
+
+export const GET: RequestHandler = async () => {
+    let ret = await db.select().from(messages);
+    return json({messages:ret});
+}

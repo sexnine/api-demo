@@ -6,3 +6,4 @@ export const messages = sqliteTable('messages', {
     author: text('author').notNull(),
     content: text('content').notNull(),
 });
+
