@@ -16,10 +16,9 @@ export const GET: RequestHandler = async ({ params }) => {
         .where(eq(messagesTable.id, id));
 
     const message = messages[0];
-    if (message) {
+    if (!message) {
         error(404, "Message not found");
     }
 
     return json(message);
 };
-l
