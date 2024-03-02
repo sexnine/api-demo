@@ -117,3 +117,10 @@ await fetch("/api/message", {
 [submitting a post](./src/routes/api/message/+server.ts)\
 [getting all posts](./src/routes/api/message/+server.ts)\
 [getting post by ID](./src/routes/api/message/[id=messageId]/+server.ts)
+
+# Resources
+TODO: put mdn link and perhaps some other stuff
+
+# Link to this repository
+
+<https://github.com/Mindcool25/api-demo>
