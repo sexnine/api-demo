@@ -1,9 +1,11 @@
-import { defineConfig } from 'drizzle-kit'
+import { defineConfig } from "drizzle-kit";
+import "dotenv/config";
 
 export default defineConfig({
     schema: "./src/lib/server/db/schema.ts",
-    driver: "better-sqlite",
+    driver: "turso",
     dbCredentials: {
-        url: 'sqlite.db',
+        url: process.env.SECRET_DB_URL,
+        authToken: process.env.SECRET_DB_TOKEN,
     },
-})
+});
