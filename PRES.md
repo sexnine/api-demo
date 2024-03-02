@@ -42,7 +42,7 @@ Mindcool24 <https://mindcool.xyz>
         - Contains data to be sent to the server
         - Can be images, JSON data, xml, etc.
         - POST, PUT, and DELETE requests have a body
-        - GET does not
+        - GET does not have a body
 
 # Request types
 - GET
@@ -58,7 +58,8 @@ Mindcool24 <https://mindcool.xyz>
 - HEAD
     - Similar to GET request, but only gets headers
 - CONNECT
-    - Used to start a connection between two resources, e.g. a proxy
+    - Used to start a connection between two resources, e.g.
+      a proxy
 - TRACE
     - Used for debugging, gives information
 - PATCH
@@ -66,3 +67,53 @@ Mindcool24 <https://mindcool.xyz>
 - OPTIONS
     - Asks a server what request types are allowed by the server
 
+# Backend Code for POST (Javascript)
+- Post request handling
+```javascript
+// Get the request from the frontend
+req = await request.json();
+// Storing the values into a db to save for later
+await db
+  .insert(messages)
+  // Building the JSON object to store
+  .values({ author: req.author, content: req.content });
+```
+
+# Backend Code for GET (Javascript)
+```javascript
+let ret = await db.select().from(messages);
+return json({ messages: ret });
+```
+
+# Example requests using Postman
+
+Postman Demo
+
+# Frontend Code (Javascript)
+- Written to interact with the backend I wrote
+- Fairly simple, can be interacted without auth
+# GET request
+```javascript
+    // Fetching from the given URL
+    const resp = await fetch("/api/message/");
+    // Converting the response to JSON
+    messages = await resp.json();
+```
+
+# POST request
+```javascript
+// Checking if nameInput and messageInput have a value
+if(nameInput && messageInput) {
+    // Building the reqest
+    let req = {
+        method:'POST',
+        // Creating the body with JSON
+        body: JSON.stringify({
+            author: nameInput,
+            content: messageInput
+        })
+    };
+    // Sending the reqest to the backend
+    await fetch("/api/message", req);
+}
+```

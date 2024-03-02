@@ -42,9 +42,13 @@ body {
     display: flex;
     flex-direction: column;
     .message {
+        cursor: pointer;
         background-color: #4c4c4c;
     }
     .message-author {
         background-color: #3c3c3c;
+    }
+    .message:hover {
+        border-style: dashed;
     }
 }
