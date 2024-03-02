@@ -17,6 +17,8 @@ export const POST: RequestHandler = async ({ request }) => {
 };
 
 export const GET: RequestHandler = async () => {
-    let ret = await db.select().from(messages);
+    let ret = await db
+        .select()
+        .from(messages);
     return json({ messages: ret });
 };
