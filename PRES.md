@@ -110,10 +110,10 @@ await fetch("/api/message", {
 
 [main page](./src/routes/+page.svelte)\
 [new message page](./src/routes/new/+page.svelte)\
-[single message](./src/routes/message/[id=messageId]/+page.svelte)\
+[single message](./src/routes/message/[id=messageId]/+page.svelte)
 
 # Backend code walkthrough
 
 [submitting a post](./src/routes/api/message/+server.ts)\
 [getting all posts](./src/routes/api/message/+server.ts)\
-[getting post by ID](./src/routes/api/message/[id=messageId]/+server.ts)\
+[getting post by ID](./src/routes/api/message/[id=messageId]/+server.ts)
