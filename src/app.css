@@ -1,0 +1,50 @@
+html,
+body {
+    font-family: 'Inter Variable', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+:root {
+    background-color: grey;
+}
+
+
+.header {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+
+    .header-link {
+        text-decoration: none;
+        color: grey;
+        height: 100%;
+        display: block;
+        font-weight: bold;
+    }
+    #back {
+        padding:1rem;
+        font-size: 2rem;
+        margin-right: auto;
+        color: grey;
+    }
+    #new {
+        padding:1.5rem;
+        margin-left: auto;
+        height:100%
+    }
+    a:hover {
+        background-color: #3c3c3c;
+    }
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    .message {
+        background-color: #4c4c4c;
+    }
+    .message-author {
+        background-color: #3c3c3c;
+    }
+}

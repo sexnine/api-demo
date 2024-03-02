@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Header from "$lib/components/header.svelte"
     import Message from "$lib/components/message.svelte"
 
     let messages = null
@@ -10,12 +9,13 @@
     })
 </script>
 
-<Header/>
 
-{#if messages}
-    {#each messages.messages as message, i}
-        <Message {message}/>
-    {/each}
-{:else}
-    <p>loading</p>
-{/if}
+<div class="messages">
+    {#if messages}
+        {#each messages.messages as message, i}
+            <Message {message}/>
+        {/each}
+    {:else}
+        <p>loading</p>
+    {/if}
+</div>

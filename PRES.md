@@ -7,20 +7,22 @@
 
 
 
+
 Mindcool24 <https://mindcool.xyz>
 
 # Basic concept
 
 - APIs are a way of communicating between programs
+- Mainly going to focus on HTTP APIs, specifically between
+  frontend and backend.
 
 # Examples
 
 - Pastebin <https://pastebin.com/doc_api>
     - Uses the URL of <https://pastebin.com/api/api_post.php>
     - Accepts data in the form of JSON
-    - Example request:
-    TODO put something here
-    - Can also be used to get pastes using GET requests
+    - Mainly used to get pastes from the site, but can also 
+      create new pastes.
 
 - SWAPI (Star Wars API) <https://swapi.dev>
     - Uses the base URL of <https://swapi.dev/api/>
@@ -39,25 +41,28 @@ Mindcool24 <https://mindcool.xyz>
     - Body
         - Contains data to be sent to the server
         - Can be images, JSON data, xml, etc.
+        - POST, PUT, and DELETE requests have a body
+        - GET does not
 
 # Request types
 - GET
     - Gets a response from the server with a given URL
-- HEAD
-    - Similar to GET request, but only gets headers
 - POST
     - Sends data to the server via the body
 - PUT
-    - Similar to POST request, should always do the same thing
+    - Similar to POST request
 - DELETE
     - Deletes specified resource
 
 # Request types (cont.)
+- HEAD
+    - Similar to GET request, but only gets headers
 - CONNECT
-    - Used to start 
+    - Used to start a connection between two resources, e.g. a proxy
 - TRACE
     - Used for debugging, gives information
 - PATCH
     - Modifies a resource
 - OPTIONS
     - Asks a server what request types are allowed by the server
+
