@@ -1,21 +1,24 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Message from "$lib/components/message.svelte"
+    import MessageView from "$lib/components/message.svelte"
+    import type { Message } from "$lib/types";
 
-    let messages = null;
+    let messages: Message[] | null = null;
+
     onMount(async () => {
         const resp = await fetch("/api/message/");
-        messages = await resp.json();
-    })
+        const data = await resp.json();
+        messages = data.messages;
+    });
 </script>
 
 
 <div class="messages">
     {#if messages}
-        {#each messages.messages as message, i}
-            <Message {message} />
+        {#each messages as message}
+            <MessageView {message} />
         {/each}
     {:else}
-        <p>loading</p>
+        <p>Loading...</p>
     {/if}
 </div>

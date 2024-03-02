@@ -1,15 +1,15 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { page } from '$app/stores';
-    import Message from "$lib/components/message.svelte"
+    import { page } from "$app/stores";
+    import MessageView from "$lib/components/message.svelte"
+    import type { Message } from "$lib/types";
 
     let id: number = -1;
-    let message = null;
+    let message: Message | null = null;
+
     onMount(async () => {
         id = parseInt($page.params.id);
-          if (isNaN(id)) {
-            error(400, "ID must be a number");
-          }
+
         const resp = await fetch(`/api/message/${id}`);
         message = await resp.json();
     })
@@ -17,9 +17,8 @@
 
 <div>
     {#if message}
-        <Message {message}/>
+        <MessageView {message}/>
     {:else}
         <p>loading</p>
     {/if}
-
 </div>
